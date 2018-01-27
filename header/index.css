@@ -1,0 +1,78 @@
+header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border-bottom: solid 1px #ccc;
+    user-select: none;
+    min-width: 400px;
+}
+
+@media screen and (max-width: 600px) {
+    header { 
+        display: none; 
+    }
+}
+
+header > .logo {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 4px;
+    color: rgb(88, 88, 88);
+    text-shadow: 0px 0px 2px #000, 0px 0px 0px #000, 
+    0px 0px 2px #000;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+header > logo:hover {
+    color: black;
+}
+
+header > .items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: rgba(71, 71, 71, 0.9);
+}
+
+header .item {
+    margin-left: 15px;
+    padding-top: 22px;
+    cursor: pointer;
+    height: 100%;
+}
+
+header .item:hover {
+    border-top: 2px solid rgba(0, 0, 0, 0.7);
+    padding-top: 20px;
+}
+
+header > .user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 150px;
+    margin-right: 30px;
+}
+
+header .active {
+    border-top: 1px solid black;
+    padding-top: 21px;
+    color: rgb(40, 40, 40);
+}
+
+.icon-user a {
+    font-size: 16;
+    margin-right: 20px;
+}
+
+.icon-user img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}

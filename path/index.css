@@ -1,0 +1,14 @@
+.path {
+    user-select: none;
+    min-width: 400px;
+    display: block;
+}
+
+.path > div {
+    display: inline-block;
+}
+
+.path a {
+    cursor: pointer;
+    margin: 5px;
+}

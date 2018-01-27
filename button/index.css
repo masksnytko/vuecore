@@ -1,0 +1,57 @@
+button {
+    height: 35px;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 2px;
+    cursor: default;
+    transition: background-color .2s;
+}
+
+button:hover {
+    transition: background-color .2s;
+}
+
+button.normal {
+    background: #0066ff;
+    cursor: pointer;
+}
+
+button.normal:hover {
+    background: #0066ffb4;
+}
+
+button.error {
+    background: red;
+}
+
+button.done {
+    background: green;
+}
+
+button.during {
+    color: #fff;
+    cursor: default;
+    background-color: #ccc;
+    background-image:
+        linear-gradient(-45deg,
+            rgba(0, 0, 0, .1) 0,
+            rgba(0, 0, 0, .1) 25%,
+            rgba(0, 0, 0, 0) 26%,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, .1) 51%,
+            rgba(0, 0, 0, .1) 75%,
+            rgba(0, 0, 0, 0) 76%
+        );
+    background-size: 20px 20px;
+    animation: background-move 1s linear infinite;
+    transition: none !important;
+}
+
+@keyframes background-move {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position-x: 20px;
+    }
+}
