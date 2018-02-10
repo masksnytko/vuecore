@@ -7,3 +7,5 @@ module.exports.Layer = require('./layer');
 module.exports.Graph = require('./graph');
 module.exports.Header = require('./header');
 module.exports.Button = require('./button');
+module.exports.Helper = require('./header');
+module.exports.InfoBox = require('./infobox');

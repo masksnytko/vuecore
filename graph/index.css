@@ -1,5 +1,9 @@
 .graph {
     position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .graph > svg {
@@ -12,14 +16,12 @@
 
 .graph circle {
     fill: #fff;
-    /*stroke: #49a0e5;*/
     stroke: rgb(88, 88, 88);
     stroke-width: 1.3;
 }
 
 .graph .line {
     fill: none;
-    /*stroke: #49a0e5;*/
     stroke: rgb(88, 88, 88);
     stroke-width: 1.3;
 }
@@ -32,7 +34,6 @@
 }
 
 .graph .fill {
-    /*fill: #499fe533;*/
     fill: rgba(0, 0, 0, 0.1);
     stroke: none;
     stroke-width: 0;
@@ -42,12 +43,10 @@
     position: relative;
     margin-left: 40px;
     height: 20px;
-    user-select: none;
 }
 
 .graph > .scaley {
     width: 50px;
-    user-select: none;
 }
 
 .graph > .hovers {
