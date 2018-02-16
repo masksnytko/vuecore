@@ -1,47 +1,19 @@
 {
-  "_from": "vuecore",
-  "_id": "vuecore@1.0.2",
-  "_inBundle": false,
-  "_integrity": "sha512-ddJ0VDmxOxbNqtlpbSADteRWKjVRsALBxWxH2PWbgnbB71pLbwxwOVChsjae0+O0f55R1PVp4HaFXvNINDVcWA==",
-  "_location": "/vuecore",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "vuecore",
-    "name": "vuecore",
-    "escapedName": "vuecore",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/vuecore/-/vuecore-1.0.1.tgz",
-  "_shasum": "1f1408542178a9786944ad8d861e4e29d075937f",
-  "_spec": "vuecore",
-  "_where": "C:\\captchi.net\\frontend",
-  "author": {
-    "name": "snytko maksim"
-  },
-  "bugs": {
-    "url": "https://github.com/masksnytko/vuecore/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "vuecore",
-  "homepage": "https://github.com/masksnytko/vuecore#readme",
-  "license": "ISC",
-  "main": "index.js",
   "name": "vuecore",
+  "version": "1.0.2",
+  "description": "vuecore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/masksnytko/vuecore.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": "snytko maksim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masksnytko/vuecore/issues"
   },
-  "version": "1.0.1"
+  "homepage": "https://github.com/masksnytko/vuecore#readme"
 }
