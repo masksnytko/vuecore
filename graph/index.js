@@ -4,13 +4,6 @@ require('./index.css');
 
 const Core = require('../core');
 
-class Point {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 class Graph extends Array {
     constructor(options) {
         super();
@@ -21,6 +14,7 @@ class Graph extends Array {
         this.fTitle = options.title;
         this.fScaleX = options.scaleX;
         this.fScaleY = options.scaleY;
+        this._lastRender = 0;
 
         Core.call(this, `<div class="graph">
         <svg height="${this.height + 8}" width="${this.width + 8}" viewbox="-4 -4 ${this.width + 8} ${this.height + 8}" shape-rendering="geometricPrecision">
@@ -95,6 +89,20 @@ class Graph extends Array {
         }
     }
     render() {
+        if (Date.now() - this._lastRender < 2000) {
+            if (this._timer === undefined) {
+                this._timer = setTimeout(() => {
+                    this.render();
+                }, 3000);
+            } else {
+                clearTimeout(this._timer);
+                this._timer = undefined;
+            }
+            return;
+        }
+
+        this._lastRender = Date.now();
+
         this._initGrid();
         this._initMinMax();
         this._initScale();
@@ -106,6 +114,14 @@ class Graph extends Array {
         for (let i = 0; i < this.length; i++) {
             let x = (this[i].x - this.minX) / (this.maxX - this.minX) * this.width;
             let y = this.height - (this[i].y - this.minY) / (this.maxY - this.minY) * this.height;
+
+            if (isNaN(x) === true) {
+                x = 0;
+            }
+            if (isNaN(y) === true) {
+                y = this.height;
+            }
+
             points += `${x},${y} `;
 
             let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -121,7 +137,7 @@ class Graph extends Array {
                 this.el.title.style.display = 'block';
                 this.el.title.style.left = x;
                 this.el.title.style.top = y;
-                this.el.title.textContent = typeof this.fTitle === 'function' ? this.fTitle(this[i]) : this[i].y;
+                this.el.title.textContent = typeof this.fTitle === 'function' ? this.fTitle(this[i], this.el) : this[i].y;
                 circle.style.fill = 'rgb(88, 88, 88)';
             });
             hover.addEventListener('mouseout', e => {
@@ -139,4 +155,3 @@ class Graph extends Array {
 }
 
 module.exports = Graph;
-module.exports.Point = Point;

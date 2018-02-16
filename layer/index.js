@@ -5,8 +5,9 @@ class Layer {
 
 		this._layer = document.createElement('div');
 		this._layer.style.position = 'absolute';
-		this._layer.style.width = '100vw';
+		this._layer.style.minWidth = '100vw';
 		this._layer.style.minHeight = '100vh';
+		
 		this._layer.style.zIndex = Layer.count * 100;
 
 		this.base = this._layer;

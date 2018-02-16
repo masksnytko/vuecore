@@ -57,4 +57,12 @@ function bind(node) {
     }
 }
 
+Core.prototype.appendChild = function(node) {
+    if (node instanceof Element) {
+        this.base.appendChild(node);
+    } else if (node.base instanceof Element) {
+        this.base.appendChild(node.base);
+    }
+}
+
 module.exports = Core;

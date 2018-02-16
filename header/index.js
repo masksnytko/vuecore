@@ -7,10 +7,16 @@ const Core = require('../core');
 class IconUser extends Core {
     constructor(data) {
         super(`<div class="icon-user">
-            ${data.balance !== undefined?'<a #balance></a>':''}
-            <a>${data.name}</a>
+            <a #balance></a>
+            <h2>${data.name}</h2>
             <img src=${data.src}>
         </div>`);
+        this.style = 'currency';
+        this.currency = 'RUB';
+        this.currencyDisplay = 'code';
+    }
+    set balance(v) {
+        this.el.balance.textContent = v.toLocaleString(undefined, this);
     }
 }
 
@@ -27,7 +33,7 @@ class Item extends Core {
 class Header extends Core {
     constructor(logo) {
         super(`<header>
-            <div class="logo" :onclick="clickLogo">${logo}</div>
+            ${logo === undefined ? '' : `<div class="logo" :onclick="clickLogo">${logo}</div>`}
             <div class="items" #items></div>
         </header>`);
         window.addEventListener('hashchange', this.hashchange.bind(this));
@@ -56,9 +62,6 @@ class Header extends Core {
     add(item) {
         this.el.items.appendChild(item.base);
         this[item.hash] = item;
-    }
-    setIconUser(iconUser) {
-        this.base.appendChild(iconUser.base);
     }
 }
 

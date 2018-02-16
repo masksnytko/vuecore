@@ -9,12 +9,6 @@ header {
     min-width: 400px;
 }
 
-@media screen and (max-width: 600px) {
-    header { 
-        display: none; 
-    }
-}
-
 header > .logo {
     margin-left: 40px;
     display: flex;
@@ -52,26 +46,30 @@ header .item:hover {
     padding-top: 20px;
 }
 
-header > .user {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    min-width: 150px;
-    margin-right: 30px;
-}
-
 header .active {
     border-top: 1px solid black;
     padding-top: 21px;
     color: rgb(40, 40, 40);
 }
 
-.icon-user a {
-    font-size: 16;
-    margin-right: 20px;
+.icon-user {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 13;
+    margin-right: 30px;
 }
 
-.icon-user img {
+.icon-user > a {
+    color: #999;
+    margin-right: 15px;
+}
+
+.icon-user > h2 {
+    margin-right: 15px;
+}
+
+.icon-user > img {
     height: 40px;
     width: 40px;
     border-radius: 20px;

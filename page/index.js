@@ -3,6 +3,7 @@
 class Page {
     constructor() {
         this.base = document.createElement('div');
+        this.base.className = 'page';
         this.base.style.display = 'none';
     }
     display(v = true) {

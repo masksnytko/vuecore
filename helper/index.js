@@ -19,9 +19,14 @@ class Helper extends Core {
             popup.base.parentNode.removeChild(popup.base);
         });
         this.base.parentNode.appendChild(popup.base);
-        
+
         if (event.pageX + popup.base.offsetWidth + 40 > window.innerWidth) {
-            popup.base.style.left = this.base.parentNode.offsetWidth-popup.base.offsetWidth - 40;
+            if (event.pageX > popup.base.offsetWidth + 40) {
+                popup.base.style.width = popup.base.offsetWidth;
+                popup.base.style.left = this.base.parentNode.offsetWidth - popup.base.offsetWidth - 40;
+            } else {
+                popup.base.style.left = -this.base.parentNode.offsetLeft;
+            }
         }
     }
 }
